@@ -91,6 +91,64 @@
         margin: 20px 0 10px 0;
         display: block;
       }
+      .accomodation-container {
+        background-color: aliceblue;
+        margin: 10% auto;
+        border: none;
+        border-radius: 20px;
+        padding: 0 5px;
+        max-width: 70%;
+        justify-content: center;
+        height: 80%;
+        padding-top: 30px;
+      }
+      .first-3-img {
+        display: flex;
+      }
+      .last-3-img {
+        display: flex;
+      }
+      .image {
+        margin: 5px 5px 5px 5px;
+        border: 1px solid rgba(39, 33, 66, 0.4);
+        border-radius: 10px;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+        justify-content: center;
+        background-color: palevioletred;
+        color: white;
+        transition: all 150ms ease-in-out;
+      }
+      .check-in {
+        font-size: 14px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .check-in strong {
+        color: palevioletred;
+      }
+      .descri {
+        font-size: 12px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .gods-window-picture {
+        display: block;
+        margin: auto;
+        text-align: center;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: lightseagreen;
+        color: #000;
+      }
       footer {
         background-color: honeydew;
         margin: 100px 20% 10% 20%;
@@ -100,15 +158,20 @@
         padding: 16px 0;
         border: none;
         border-radius: 10px;
+        color: #000;
+      }
+      footer a {
+        color: palevioletred;
+        font-weight: bold;
+        text-decoration: none;
       }
     </style>
   </head>
   <body>
-    <button>Book an accomodation here</button>
     <header>
       <h1>Let's explore Graskop!</h1>
       <div class="description">
-        Graskop is an advertures place to rewind your mind. Here are activities
+        Graskop is an adventurous place to rewind your mind. Here are activities
         you can do in Graskop:
       </div>
     </header>
@@ -155,7 +218,17 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
-          <p></p>
+          <p>
+            Blyde River Canyon Nature Reserve is situated in the Drakensberg
+            escarpment region of eastern Mpumalanga, South Africa.
+          </p>
+          <img
+            class="gods-window-picture"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/165/830/original/gods_window.jpg?1747243854"
+            witdh="150px"
+            height="140px"
+            alt=""
+          />
         </div>
       </div>
       <div class="explore-more">
@@ -180,6 +253,72 @@
           <p>Potholes</p>
         </div>
       </div>
+      <div class="accomodation-container">
+        <button id="book">Book an accomodation here</button>
+
+        <p class="check-in">
+          Check-in from: <strong>14:00 pm </strong> ~ Check-out to:
+          <strong>11:00 am </strong>
+        </p>
+        <p class="descri">
+          Nestled in Graskop, Nyeleti Guest House Graskop 1 provides a serene
+          retreat with complimentary Wi-Fi and flat-screen televisions. The
+          guest house features a lovely garden and terrace, ideal for
+          relaxation.
+          <br />
+          It is situated 16 km from Mac-Mac Falls and 29 km from Sabie Country
+          Club, making it a great base for exploring the area's natural
+          attractions. Wi-Fi is available throughout the property.
+        </p>
+        <div class="first-3-img">
+          <img
+            class="image"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/165/810/original/nyeleti.jpg?1747225505"
+            width="300px"
+            height="300px"
+            alt=""
+          />
+
+          <img
+            class="image"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/165/813/original/nyeleti_2.jpg?1747229914"
+            alt=""
+            width="300px"
+            height="300px"
+          />
+          <img
+            class="image"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/165/814/original/nyeleti_3.jpg?1747229971"
+            alt=""
+            width="300px"
+            height="300px"
+          />
+        </div>
+        <div class="last-3-img">
+          <img
+            class="image"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/165/815/original/nyeleti_6.jpg?1747230063"
+            width="300px"
+            height="300px"
+            alt=""
+          />
+          <img
+            class="image"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/165/817/original/nyeleti_8.jpg?1747230191"
+            width="300px"
+            height="300px"
+            alt=""
+          />
+          <img
+            class="image"
+            src="
+    https://s3.amazonaws.com/shecodesio-production/uploads/files/000/165/816/original/nyeleti_7.jpg?1747230110"
+            width="300px"
+            height="300px"
+            alt=""
+          />
+        </div>
+      </div>
     </main>
     <footer>
       This project was coded by
@@ -188,12 +327,25 @@
         >open-sourced on Github</a
       >
       and
-      <a
-        href="https://app.netlify.com/projects/quiet-longma-0554fd/configuration/deploys"
-      >
+      <a href="https://vacation-graskop-0554fd.netlify.app/">
         hosted on Netlify</a
       >
     </footer>
   </body>
-  <script></script>
+  <script>
+    function bookAccomodation() {
+      let checkIn = prompt("When would you like to check-in and at what time?");
+      let people = prompt("How many people are you booking for?");
+      let firstName = prompt("What is your firstname?");
+      let lastName = prompt("What is your lastname?");
+      let email = prompt("What is your email address?");
+      {
+        alert(
+          `Hello! ${firstName} ${lastName}: we have received your booking for the accomodation, we will be in touch with you shortly via email. `
+        );
+      }
+    }
+    let button = document.querySelector("#book");
+    button.addEventListener("click", bookAccomodation);
+  </script>
 </html>
